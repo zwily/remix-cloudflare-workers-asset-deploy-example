@@ -3,7 +3,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
-    "deploy": "npm run build && npm run build:worker-asset-manifest && npm run build && wrangler kv:bulk put --binding __STATIC_CONTENT -e production assets.json && wrangler publish -e production",
+    "deploy": "npm run build && npm run build:worker-asset-manifest && npm run build && wrangler kv:bulk put --binding __STATIC_CONTENT assets.json && wrangler publish",
     "dev:remix": "remix watch",
     "dev:miniflare": "cross-env NODE_ENV=development miniflare ./build/index.js --watch --site ./public",
     "dev": "remix build && run-p \"dev:*\"",

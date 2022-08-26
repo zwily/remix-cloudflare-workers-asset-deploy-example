@@ -5,12 +5,12 @@ main = "./build/index.js"
 # https://developers.cloudflare.com/workers/platform/compatibility-dates
 compatibility_date = "2022-04-05"
 
-[build]
-  command = "npm run build"
-
-[env.production]
 # You have to create this KV environment yourself. TODO: We could create this automatically
 # during a deploy like wrangler does.
 kv_namespaces = [
   { binding = "__STATIC_CONTENT", id = "02323921a8e1448c950e1590931c5b63", preview_id = "" }
 ]
+
+[build]
+  command = "npm run build"
+
